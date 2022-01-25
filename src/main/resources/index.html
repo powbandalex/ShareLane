@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+  <title>Main page</title>
+
+  <script>
+        var globalVar;
+        function hideValue(x) {
+            globalVar=x.value
+            x.value = "";
+        }
+        function setValue(x) {
+            x.value=globalVar;
+        }
+    </script>
+
+  <style type="text/css">
+        html { text-align: center }
+        input {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 200%;
+        width:400px;
+        height:110px;
+        background-position: center;
+        background-size: 400px 110px;
+        }
+        .default{
+        background-image: url("images/background.jpg");
+        }
+        .blue {
+        background-color: #0000FF;}
+        .green {
+        background-color: #87b400;}
+        input:hover {
+        background-image: url("images/background_alter.jpg");
+        }
+        h1 { font-size: 500%;
+         font-family: "Century Gothic" sans-serif; }
+        p { font-size: 12pt
+         font-family"Comic Sans MS" sans-serif;
+        color: grey;}
+    </style>
+</head>
+<body>
+<h1>Welcome</h1>
+<form action="/about.html" method="get">
+  <input class="default" id=about type="submit" value="About Us" onmouseover="hideValue(this)" onmouseout="setValue(this)">
+</form>
+<form action="/media.html" method="get">
+  <input class="green" id=media type="submit" value="Get Media" onmouseover="hideValue(this)" onmouseout="setValue(this)">
+</form>
+<br>
+<br>
+<p>This is just a dummy site (c)</p>
+</body>
+</html>
