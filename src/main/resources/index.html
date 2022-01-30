@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>My First Page</title>
+    <script type="text/javascript" src="myscript.js"></script>
 
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-  <title>Main page</title>
-
-  <script>
-        var globalVar;
-        function hideValue(x) {
-            globalVar=x.value
-            x.value = "";
-        }
-        function setValue(x) {
-            x.value=globalVar;
-        }
-    </script>
-
-  <style type="text/css">
-        html { text-align: center }
-        input {
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 200%;
-        width:400px;
-        height:110px;
-        background-position: center;
-        background-size: 400px 110px;
-        }
-        .default{
-        background-image: url("images/background.jpg");
-        }
-        .blue {
-        background-color: #0000FF;}
-        .green {
-        background-color: #87b400;}
-        input:hover {
-        background-image: url("images/background_alter.jpg");
-        }
-        h1 { font-size: 500%;
-         font-family: "Century Gothic" sans-serif; }
-        p { font-size: 12pt
-         font-family"Comic Sans MS" sans-serif;
-        color: grey;}
-    </style>
 </head>
 <body>
-<h1>Welcome</h1>
-<form action="/about.html" method="get">
-  <input class="default" id=about type="submit" value="About Us" onmouseover="hideValue(this)" onmouseout="setValue(this)">
-</form>
-<form action="/media.html" method="get">
-  <input class="green" id=media type="submit" value="Get Media" onmouseover="hideValue(this)" onmouseout="setValue(this)">
-</form>
+<h1 align="center" id="header" name="header">Hello World</h1>
+<br>
+<p align="center">This paragraph of my first page</p>
 <br>
 <br>
-<p>This is just a dummy site (c)</p>
+<div align="center" class="city">This is div</div>
+<br>
+<span>SpanBob</span>
+
+<div align="center">
+
+    <label for="input1">First Name:</label>
+    <input type="text" id="input1">
+    <br>
+    <br>
+    <label for="input2">Last Name:</label>
+    <input type="text" id="input2">
+    <br>
+    <br>
+    <input type="submit" value="Click Me">
+    <br>
+    <br>
+    <button>Click</button>
+    <br>
+    <br>
+    <br>
+    <select name="cars" id="cars">
+        <option>Volvo</option>
+        <option>Dodge</option>
+        <option>Audi</option>
+    </select>
+    <br>
+    <br>
+    <img src="catss.png" alt="Ooops">
+    <br>
+    <br>
+    <a href="https://youtube.com">My Link</a>
+    <br>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Head</th>
+            <th>Head2</th>
+        </tr>
+        <tr>
+            <td>value1</td>
+            <td>value2</td>
+        </tr>
+
+    </table>
+    <span>Some text</span>
+    <br>
+    <br>
+    <input id="elem" type="button" onclick="showMessage()" value="Нажми меня!">
+
+
+</div>
+
+
 </body>
 </html>

@@ -1,3 +1,3 @@
-function foo() {
-    alert('Awesome');
+function showMessage() {
+  alert( 'Hi there' );
 }

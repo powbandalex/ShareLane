@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <title>My First Page</title>
-  <link href="aboutdata/style.css" rel="stylesheet">
-  <script type="text/javascript" src="aboutdata/myscript.js"></script>
+    <title>My First Page</title>
+    <link href="aboutdata/style.css" rel="stylesheet">
+    <script type="text/javascript" src="aboutdata/myscript.js"></script>
 </head>
 <body>
-<H1 align="center">Some Interesting Title</H1>
+<H1 id="heading_one">Welcome, Stranger!</H1>
 <br>
-<p align="center">
-  <img src="/images/money.jpg">
-</p>
-<p align="center" style="color:#FF5733">
-  <big>
-    <b>
-      Here could be some interesting text
-    </b>
-  </big>
+<H2 id="heading_two">My name is Alexey</H2>
+<br>
+<p align="center" style="color:#000000">
+    <big>
+        <b>
+            Please, see table with my travel plans
+        </b>
+    </big>
 </p>
 <table align="center" border="1">
-  <tr>
-    <td>Some</td>
-    <td>Cool</td>
-    <td>Table1</td>
-  </tr>
-  <tr>
-    <td>Some</td>
-    <td>Cool</td>
-    <td>Table2</td>
-  </tr>
+    <tr>
+        <th>Country</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>Russia</td>
+        <td>Moscow</td>
+    </tr>
+    <tr>
+        <td>United Kingdom</td>
+        <td>London</td>
+    </tr>
+    <tr>
+        <td>France</td>
+        <td>Paris</td>
+    </tr>
 </table>
-<p align="center">
-  <a href="new.html">Href</a>
-  <br>
-  <br>
-  <input id="elem" type="button" onclick="foo()" value="Click me">
+<br>
+<p align="center" style="color:#000000">
+    <label for="bands">I like these bands:</label>
+    <select name="bands" id="bands">
+        <option>Police</option>
+        <option>Joy Division</option>
+        <option>Foo Fighters</option>
+    </select>
 </p>
-
-<form align="center">
-  <input type="button" value="Go Back" onclick="history.back()">
-</form>
+<br>
+<p align="center" style="color:#111111">
+    <label for="rhand">Right-handed:</label><br>
+    <input type="checkbox" id="rhand" name="rhand"><br>
+    <label for="lhand">Left-handed:</label><br>
+    <input type="checkbox" id="lhand" name="lhand"><br><br>
+</p>
+<p align="center">
+    <a href="https://www.w3schools.com/" id="href">W3Schools</a>
+    <br>
+    <br>
+    <input id="elem" type="button" onclick="showMessage()" value="Click me">
+</p>
+<br>
+<p align="center">
+    <img src="cat.png" alt="oops, you found it">
+</p>
 </body>
 
 </html>
