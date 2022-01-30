@@ -23,6 +23,7 @@ public class SignUpTest {
     public void sendFiveDigitsToZipCodeFieldTest() {
         Faker faker = new Faker();
 
+        sendZipCode("123456");
         //Check Register button is shown
         boolean isRegisterButtonShown = driver.findElement(By.xpath("//input[@value='Register']")).isDisplayed();
         Assert.assertTrue(isRegisterButtonShown, "Error message isn't shown");
