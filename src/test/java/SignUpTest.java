@@ -40,6 +40,23 @@ public class SignUpTest {
         }
     }
 
+    @Test
+    public void sendSignUpFormTest() {
+        sendZipCode("123456");
+        //Input data into fields
+        driver.findElement(By.name("first_name")).sendKeys("Some");
+        driver.findElement(By.name("last_name")).sendKeys("Some");
+        driver.findElement(By.name("email")).sendKeys("some@gmail.com");
+        driver.findElement(By.name("password1")).sendKeys("12345");
+        driver.findElement(By.name("password2")).sendKeys("12345");
+        //Click register button
+        driver.findElement(By.cssSelector("[value=Register]")).click();
+        //Check message 'Account is created'
+        boolean isSuccessMessageShown = driver.findElement(By.className("confirmation_message")).isDisplayed();
+        driver.quit();
+        Assert.assertTrue(isSuccessMessageShown, "Success message isn't shown");
+    }
+
     private void sendZipCode(String zipCode) {
         //Open Zip code page
         driver.get(BASE_URL);
