@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.PropertiesManager;
 
 public class BaseTest {
 
@@ -11,7 +12,8 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        PropertiesManager propertiesManager = new PropertiesManager();
+        System.setProperty("webdriver.chrome.driver", propertiesManager.get("PATH_TO_CHROME_DRIVER"));
         driver = new ChromeDriver();
         System.out.println("Start Driver");
     }
