@@ -1,71 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="style.css" rel="stylesheet">
-    <meta charset="UTF-8">
     <title>My First Page</title>
-    <script type="text/javascript" src="myscript.js"></script>
-
+    <link href="aboutdata/style.css" rel="stylesheet">
+    <script type="text/javascript" src="aboutdata/myscript.js"></script>
 </head>
 <body>
-<h1 align="center" id="header" name="header">Hello World</h1>
+<H1 id="heading_one">Welcome, Stranger!</H1>
 <br>
-<p align="center">This paragraph of my first page</p>
+<H2 id="heading_two">My name is Alexey</H2>
 <br>
 <br>
-<div align="center" class="city">This is div</div>
-<br>
-<span>SpanBob</span>
-
-<div align="center">
-
-    <label for="input1">First Name:</label>
-    <input type="text" id="input1">
-    <br>
-    <br>
-    <label for="input2">Last Name:</label>
-    <input type="text" id="input2">
-    <br>
-    <br>
-    <input type="submit" value="Click Me">
-    <br>
-    <br>
-    <button>Click</button>
-    <br>
-    <br>
-    <br>
-    <select name="cars" id="cars">
-        <option>Volvo</option>
-        <option>Dodge</option>
-        <option>Audi</option>
+<p align="center" style="color:#000000">
+    <label for="bands">I like these bands:</label>
+    <select name="bands" id="bands">
+        <option value="" disabled="disabled" selected="selected">Please select an option</option>
+        <option>Police</option>
+        <option>Joy Division</option>
+        <option>Foo Fighters</option>
     </select>
+</p>
+<br>
+<p align="center" style="color:#111111">
+    <label for="rhand">Right-handed:</label><br>
+    <input type="checkbox" id="rhand" name="rhand"><br>
+    <label for="lhand">Left-handed:</label><br>
+    <input type="checkbox" id="lhand" name="lhand"><br><br>
+</p>
+<p align="center">
+    <a href="https://www.w3schools.com/" id="href">W3Schools</a>
     <br>
     <br>
-    <img src="catss.png" alt="Ooops">
-    <br>
-    <br>
-    <a href="https://youtube.com">My Link</a>
-    <br>
-    <br>
-    <table border="1">
-        <tr>
-            <th>Head</th>
-            <th>Head2</th>
-        </tr>
-        <tr>
-            <td>value1</td>
-            <td>value2</td>
-        </tr>
+    <input id="elem" type="button" onclick="showMessage()" value="Click me">
+</p>
 
-    </table>
-    <span>Some text</span>
-    <br>
-    <br>
-    <input id="elem" type="button" onclick="showMessage()" value="Нажми меня!">
+<div id="content" class="large-12 columns">
+    <style>
+.columns {
+  width: 400px;
+}
+.column {
+  height: 150px;
+  width: 150px;
+  float: left;
+  border: 2px solid #666666;
+  background-color: #ccc;
+  margin-right: 5px;
+  text-align: center;
+  cursor: move;
+}
+.column.over {
+  border: 2px dashed #000;
+}
+</style>
 
+    <div class="example" align="center">
+        <div id="columns">
+            <div class="column" id="column-a" draggable="true"><header>Hold Me Gently</header></div>
+        </div>
+    </div>
+
+    <script>
+var dragSrcEl = null;
+
+function handleDragStart(e) {
+  this.style.opacity = '0.4';
+
+  dragSrcEl = this;
+
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+
+  e.dataTransfer.dropEffect = 'move';
+
+  return false;
+}
+
+function handleDragEnter(e) {
+  this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over');
+}
+
+function handleDrop(e) {
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+
+  if (dragSrcEl != this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+  }
+
+  return false;
+}
+
+function handleDragEnd(e) {
+  [].forEach.call(cols, function (col) {
+    col.classList.remove('over');
+  });
+  this.style.opacity = '1';
+}
+
+var cols = document.querySelectorAll('#columns .column');
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false);
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+});
+</script>
 
 </div>
-
+<br>
+<p align="center">
+    <img src="cat.png" alt="oops, you found it">
+</p>
 
 </body>
+
 </html>
