@@ -9,7 +9,7 @@ import staticdata.WebUrls;
 
 public class LoginTest extends BaseTest {
 
-    private static final String EMAIL = "";
+    private static final String EMAIL = "amit_sidoroff@447.08.sharelane.com";
     private static final String PASSWORD = "1111";
 
     @Test
