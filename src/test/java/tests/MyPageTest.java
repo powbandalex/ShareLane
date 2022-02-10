@@ -1,12 +1,7 @@
 package tests;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import staticdata.WebUrls;
 
@@ -16,20 +11,20 @@ public class MyPageTest extends BaseTest {
     @Test
     public void cookiesDemo() {
         driver.get("https://www.onliner.by/");
-//        System.out.println(driver.manage().getCookies());
         System.out.println(driver.manage().getCookies());
-//        Cookie cookie = driver.manage().getCookieNamed("ouid");
-//        driver.manage().addCookie(cookie);
-//        driver.manage().deleteAllCookies();
-//        System.out.println(driver.manage().getCookies());
+        System.out.println(driver.manage().getCookies());
+        Cookie cookie = driver.manage().getCookieNamed("ouid");
+        driver.manage().addCookie(cookie);
+        driver.manage().deleteAllCookies();
+        System.out.println(driver.manage().getCookies());
     }
 
 
     @Test
     public void getUrlDemoTest() {
         driver.navigate().to(WebUrls.LOCAL_PAGE_URL);
-//        System.out.println(driver.getCurrentUrl());
-//        System.out.println(driver.getPageSource());
+        System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getPageSource());
         driver.navigate().to(WebUrls.LOCAL_PAGE_URL);
         driver.navigate().refresh();
         System.out.println(driver.getWindowHandle());
@@ -68,12 +63,7 @@ public class MyPageTest extends BaseTest {
     public void actionsDemoTest() {
         driver.manage().window().maximize();
         driver.get(WebUrls.LOCAL_PAGE_URL);
-        WebElement holdMe = driver.findElement(By.id("column-a"));
+        WebElement holdMeImOnFire = driver.findElement(By.id("column-a"));
 
-    }
-
-    @AfterMethod()
-    public void tearDown() {
-        driver.quit();
     }
 }
