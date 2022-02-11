@@ -45,6 +45,6 @@ public class RegistrationPomOnNonSmokerPage extends BasePage {
     }
 
     public boolean checkRegisterButton() {
-        return driver.findElement(By.xpath("//input[@value='Register']")).isDisplayed();
+        return driver.findElement(REGISTER_BUTTON).isDisplayed();
     }
 }

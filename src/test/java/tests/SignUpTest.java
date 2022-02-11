@@ -1,27 +1,32 @@
 package tests;
 
+import fluentpage.AccountCreatedPage;
+import fluentpage.RegistrationFluentPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pompages.RegistrationPomOnNonSmokerPage;
 import utilities.GenerateFakeMessage;
 
 public class SignUpTest extends BaseTest {
 
-    RegistrationPomOnNonSmokerPage registrationClassicalPomPage;
+    RegistrationFluentPage registrationFluentPage;
+    AccountCreatedPage accountCreatedPage;
 
     @Test
     public void sendFiveDigitsToZipCodeFieldTest() {
-        registrationClassicalPomPage = new RegistrationPomOnNonSmokerPage(driver);
-        registrationClassicalPomPage.inputZipCode(GenerateFakeMessage.getValidZipcode());
-        boolean isRegisterButtonShown = registrationClassicalPomPage.checkRegisterButton();
+        registrationFluentPage = new RegistrationFluentPage(driver);
+        registrationFluentPage.openRegistrationPage();
+        registrationFluentPage.inputZipCode(GenerateFakeMessage.getValidZipcode());
+        boolean isRegisterButtonShown = registrationFluentPage.checkRegisterButton();
         Assert.assertTrue(isRegisterButtonShown, "Error message isn't shown");
     }
 
     @Test
     public void sendMoreThanFiveDigitsToZipCodeTest() {
-        registrationClassicalPomPage.inputZipCode(GenerateFakeMessage.getSixDigitsZipcode());
+        registrationFluentPage = new RegistrationFluentPage(driver);
+        registrationFluentPage.openRegistrationPage();
+        registrationFluentPage.inputZipCode(GenerateFakeMessage.getSixDigitsZipcode());
         try {
             boolean isErrorMessageShown = driver.findElement(By.className("error_message")).isDisplayed();
             Assert.assertTrue(isErrorMessageShown, "Check Message");
@@ -32,14 +37,17 @@ public class SignUpTest extends BaseTest {
 
     @Test
     public void sendSignUpFormTest() {
-        registrationClassicalPomPage.sendRegistrationForm(
+        registrationFluentPage = new RegistrationFluentPage(driver);
+        registrationFluentPage.openRegistrationPage();
+        registrationFluentPage.sendRegistrationForm(
                 GenerateFakeMessage.getValidZipcode(),
                 "some",
                 "some",
                 "some@test.com",
                 "string@1",
                 "string@1");
-        boolean isSuccessMessageShown = driver.findElement(By.className("confirmation_message")).isDisplayed();
+        accountCreatedPage = new AccountCreatedPage(driver);
+        boolean isSuccessMessageShown = accountCreatedPage.checkConfirmation();
         driver.quit();
         Assert.assertTrue(isSuccessMessageShown, "Success message isn't shown");
     }
