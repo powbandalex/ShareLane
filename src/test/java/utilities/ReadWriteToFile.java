@@ -13,6 +13,10 @@ public class ReadWriteToFile {
 
         Path filePath;
         filePath = Paths.get("src/test/resources/file_for_demo");
+
+        String fileContent = new String(Files.readAllBytes(filePath));
+        System.out.println(fileContent);
+
         Files.write(filePath, (System.lineSeparator() + "Test").getBytes(StandardCharsets.UTF_8));
         Files.write(
                 Paths.get("src/test/resources/file_for_demo"),
