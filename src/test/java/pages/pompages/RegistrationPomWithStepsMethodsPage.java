@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.WebUrls;
 
-public class RegistrationPomOnNonSmokerPage extends BasePage {
+public class RegistrationPomWithStepsMethodsPage extends BasePage {
 
     private By ZIP_INPUT = By.name("zip_code");
     private By CONTINUE_BUTTON = By.cssSelector("[value='Continue']");
@@ -16,7 +16,7 @@ public class RegistrationPomOnNonSmokerPage extends BasePage {
     private By REGISTER_BUTTON = By.cssSelector("[value='Register']");
 
 
-    public RegistrationPomOnNonSmokerPage(WebDriver driver) {
+    public RegistrationPomWithStepsMethodsPage(WebDriver driver) {
         super(driver);
     }
 
