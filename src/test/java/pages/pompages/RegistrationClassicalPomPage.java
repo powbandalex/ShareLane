@@ -1,10 +1,10 @@
-package pompages;
+package pages.pompages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.WebUrls;
 
-public class RegistrationPomOnNonSmokerPage extends BasePage {
+public class RegistrationClassicalPomPage extends BasePage {
 
     private By ZIP_INPUT = By.name("zip_code");
     private By CONTINUE_BUTTON = By.cssSelector("[value='Continue']");
@@ -16,7 +16,7 @@ public class RegistrationPomOnNonSmokerPage extends BasePage {
     private By REGISTER_BUTTON = By.cssSelector("[value='Register']");
 
 
-    public RegistrationPomOnNonSmokerPage(WebDriver driver) {
+    public RegistrationClassicalPomPage(WebDriver driver) {
         super(driver);
     }
 
@@ -24,23 +24,35 @@ public class RegistrationPomOnNonSmokerPage extends BasePage {
         driver.get(WebUrls.SHARE_LANE_REGISTER_URL);
     }
 
-    public void inputZipCode(String zipcode) {
+    public void inputIntoZip(String zipcode) {
         driver.findElement(ZIP_INPUT).sendKeys(zipcode);
+    }
+
+    public void clickContinue() {
         driver.findElement(CONTINUE_BUTTON).click();
     }
 
-    public void sendRegistrationForm(String zipcode,
-                                     String fName,
-                                     String lName,
-                                     String email,
-                                     String pwd,
-                                     String confirmPwd) {
-        inputZipCode(zipcode);
+    public void inputFirstName(String fName) {
         driver.findElement(FIRST_NAME_INPUT).sendKeys(fName);
+    }
+
+    public void inputLastName(String lName) {
         driver.findElement(LAST_NAME_INPUT).sendKeys(lName);
+    }
+
+    public void inputEmail(String email) {
         driver.findElement(EMAIL_INPUT).sendKeys(email);
+    }
+
+    public void inputPassword(String pwd) {
         driver.findElement(PASSWORD_INPUT).sendKeys(pwd);
+    }
+
+    public void inputConfirmPassword(String confirmPwd) {
         driver.findElement(PASSWORD_CONFIRM_INPUT).sendKeys(confirmPwd);
+    }
+
+    public void clickRegisterButton() {
         driver.findElement(REGISTER_BUTTON).click();
     }
 

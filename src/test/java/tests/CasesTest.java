@@ -64,12 +64,9 @@ public class CasesTest extends BaseTest {
     @Test
     public void checkValueOfButtonsTest() {
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
-
         driver.findElement(By.xpath("//button[text() = 'Add Element']")).click();
         driver.findElement(By.xpath("//button[text() = 'Add Element']")).click();
-
         driver.findElement(By.className("added-manually")).click();
-
         String numberOfButtons = driver.findElement(By.id("elements")).getAttribute("childElementCount");
         Assert.assertEquals(numberOfButtons, "1");
 

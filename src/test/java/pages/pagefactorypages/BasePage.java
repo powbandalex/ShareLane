@@ -1,6 +1,7 @@
-package pompages;
+package pages.pagefactorypages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 abstract class BasePage {
 
@@ -8,5 +9,6 @@ abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 }

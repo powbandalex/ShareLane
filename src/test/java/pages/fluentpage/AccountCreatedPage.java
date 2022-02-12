@@ -1,4 +1,4 @@
-package fluentpage;
+package pages.fluentpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

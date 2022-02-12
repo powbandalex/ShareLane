@@ -1,4 +1,4 @@
-package fluentpage;
+package pages.pompages;
 
 import org.openqa.selenium.WebDriver;
 

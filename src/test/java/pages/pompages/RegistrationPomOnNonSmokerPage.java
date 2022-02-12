@@ -1,10 +1,10 @@
-package fluentpage;
+package pages.pompages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.WebUrls;
 
-public class RegistrationFluentPage extends BasePage {
+public class RegistrationPomOnNonSmokerPage extends BasePage {
 
     private By ZIP_INPUT = By.name("zip_code");
     private By CONTINUE_BUTTON = By.cssSelector("[value='Continue']");
@@ -16,7 +16,7 @@ public class RegistrationFluentPage extends BasePage {
     private By REGISTER_BUTTON = By.cssSelector("[value='Register']");
 
 
-    public RegistrationFluentPage(WebDriver driver) {
+    public RegistrationPomOnNonSmokerPage(WebDriver driver) {
         super(driver);
     }
 

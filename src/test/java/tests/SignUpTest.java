@@ -1,7 +1,7 @@
 package tests;
 
-import fluentpage.AccountCreatedPage;
-import fluentpage.RegistrationFluentPage;
+import pages.fluentpage.AccountCreatedPage;
+import pages.fluentpage.RegistrationFluentPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
@@ -39,8 +39,8 @@ public class SignUpTest extends BaseTest {
     public void sendSignUpFormTest() {
         registrationFluentPage = new RegistrationFluentPage(driver);
         registrationFluentPage.openRegistrationPage();
+        registrationFluentPage.inputZipCode(GenerateFakeMessage.getValidZipcode());
         registrationFluentPage.sendRegistrationForm(
-                GenerateFakeMessage.getValidZipcode(),
                 "some",
                 "some",
                 "some@test.com",
