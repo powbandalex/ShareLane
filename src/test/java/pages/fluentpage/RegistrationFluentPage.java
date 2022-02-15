@@ -20,16 +20,18 @@ public class RegistrationFluentPage extends BasePage {
         super(driver);
     }
 
-    public void openRegistrationPage() {
+    public RegistrationFluentPage openRegistrationPage() {
         driver.get(WebUrls.SHARE_LANE_REGISTER_URL);
+        return this;
     }
 
-    public void inputZipCode(String zipcode) {
+    public RegistrationFluentPage inputZipCode(String zipcode) {
         driver.findElement(ZIP_INPUT).sendKeys(zipcode);
         driver.findElement(CONTINUE_BUTTON).click();
+        return this;
     }
 
-    public void sendRegistrationForm(String fName,
+    public AccountCreatedPage sendRegistrationForm(String fName,
                                      String lName,
                                      String email,
                                      String pwd,
@@ -40,6 +42,7 @@ public class RegistrationFluentPage extends BasePage {
         driver.findElement(PASSWORD_INPUT).sendKeys(pwd);
         driver.findElement(PASSWORD_CONFIRM_INPUT).sendKeys(confirmPwd);
         driver.findElement(REGISTER_BUTTON).click();
+        return new AccountCreatedPage(driver);
     }
 
     public boolean checkRegisterButton() {

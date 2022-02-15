@@ -38,16 +38,15 @@ public class ShareLaneSignUpTest extends BaseTest {
     @Test
     public void sendSignUpFormTest() {
         registrationFluentPage = new RegistrationFluentPage(driver);
-        registrationFluentPage.openRegistrationPage();
-        registrationFluentPage.inputZipCode(GenerateFakeMessage.getValidZipcode());
-        registrationFluentPage.sendRegistrationForm(
-                "some",
-                "some",
-                "some@test.com",
-                "string@1",
-                "string@1");
-        accountCreatedPage = new AccountCreatedPage(driver);
-        boolean isSuccessMessageShown = accountCreatedPage.checkConfirmation();
+        boolean isSuccessMessageShown = registrationFluentPage
+                .openRegistrationPage()
+                .inputZipCode(GenerateFakeMessage.getValidZipcode())
+                .sendRegistrationForm("some",
+                        "some",
+                        "some@test.com",
+                        "string@1",
+                        "string@1")
+                .checkConfirmation();
         driver.quit();
         Assert.assertTrue(isSuccessMessageShown, "Success message isn't shown");
     }
