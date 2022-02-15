@@ -1,6 +1,8 @@
 package tests;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import staticdata.WebUrls;
@@ -55,15 +57,24 @@ public class LocalPageTest extends BaseTest {
     @Test
     public void selectDemoTest() {
         driver.get(WebUrls.LOCAL_PAGE_URL);
-        WebElement select = driver.findElement(By.tagName("select"));
+        WebElement selectElement = driver.findElement(By.tagName("select"));
+        Select select = new Select(selectElement);
+        System.out.println(select.getOptions().get(1).getText());
 
     }
 
     @Test
     public void actionsDemoTest() {
-        driver.manage().window().maximize();
-        driver.get(WebUrls.LOCAL_PAGE_URL);
-        WebElement holdMeImOnFire = driver.findElement(By.id("column-a"));
-
+        driver.get("http://the-internet.herokuapp.com/drag_and_drop");
+        WebElement elementA = driver.findElement(By.id("column-a"));
+        WebElement elementB = driver.findElement(By.id("column-b"));
+        Actions actions = new Actions(driver);
+        actions
+                .moveToElement(elementA)
+                .clickAndHold(elementA)
+                .moveToElement(elementB)
+                .release()
+                .build()
+                .perform();
     }
 }
