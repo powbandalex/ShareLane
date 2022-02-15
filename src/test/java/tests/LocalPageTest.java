@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import staticdata.WebUrls;
 
 
-public class MyPageTest extends BaseTest {
+public class LocalPageTest extends BaseTest {
 
     @Test
     public void cookiesDemo() {

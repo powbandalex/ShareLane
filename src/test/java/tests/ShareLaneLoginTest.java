@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import staticdata.WebUrls;
 
-public class LoginTest extends BaseTest {
+public class ShareLaneLoginTest extends BaseTest {
 
     private static final String EMAIL = "amit_sidoroff@447.08.sharelane.com";
     private static final String PASSWORD = "1111";

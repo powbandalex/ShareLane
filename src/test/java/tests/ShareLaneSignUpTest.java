@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.GenerateFakeMessage;
 
-public class SignUpTest extends BaseTest {
+public class ShareLaneSignUpTest extends BaseTest {
 
     RegistrationFluentPage registrationFluentPage;
     AccountCreatedPage accountCreatedPage;

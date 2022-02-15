@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class CasesTest extends BaseTest {
+public class HwCasesTest extends BaseTest {
 
     @Test
     public void loginSauceTest() {
