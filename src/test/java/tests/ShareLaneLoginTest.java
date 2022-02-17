@@ -20,9 +20,10 @@ public class ShareLaneLoginTest extends BaseTest {
         driver.findElement(By.name("email")).sendKeys(EMAIL);
         driver.findElement(By.name("password")).sendKeys(PASSWORD);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.cssSelector("[value='Login']")));
-        removeTimeout();
+        chromeDriverManager.removeTimeout();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("user")));
+        chromeDriverManager.setTimeout();
         WebElement greeting = driver.findElement(By.className("user"));
         boolean isGreetingDisplayed = greeting.isDisplayed();
         Assert.assertTrue(isGreetingDisplayed);
