@@ -3,7 +3,6 @@ package tests;
 import driver.factorydriver.DriverFactory;
 import driver.factorydriver.DriverManager;
 import driver.factorydriver.DriverType;
-import driver.singletondriver.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
