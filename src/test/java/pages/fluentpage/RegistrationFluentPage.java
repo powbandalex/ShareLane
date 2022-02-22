@@ -1,5 +1,6 @@
 package pages.fluentpage;
 
+import models.RegistrationModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.WebUrls;
@@ -31,16 +32,12 @@ public class RegistrationFluentPage extends BasePage {
         return this;
     }
 
-    public AccountCreatedPage sendRegistrationForm(String fName,
-                                     String lName,
-                                     String email,
-                                     String pwd,
-                                     String confirmPwd) {
-        driver.findElement(FIRST_NAME_INPUT).sendKeys(fName);
-        driver.findElement(LAST_NAME_INPUT).sendKeys(lName);
-        driver.findElement(EMAIL_INPUT).sendKeys(email);
-        driver.findElement(PASSWORD_INPUT).sendKeys(pwd);
-        driver.findElement(PASSWORD_CONFIRM_INPUT).sendKeys(confirmPwd);
+    public AccountCreatedPage sendRegistrationForm(RegistrationModel model) {
+        driver.findElement(FIRST_NAME_INPUT).sendKeys(model.getFirstName());
+        driver.findElement(LAST_NAME_INPUT).sendKeys(model.getLastName());
+        driver.findElement(EMAIL_INPUT).sendKeys(model.getEmail());
+        driver.findElement(PASSWORD_INPUT).sendKeys(model.getPassword());
+        driver.findElement(PASSWORD_CONFIRM_INPUT).sendKeys(model.getConfirmPassword());
         driver.findElement(REGISTER_BUTTON).click();
         return new AccountCreatedPage(driver);
     }

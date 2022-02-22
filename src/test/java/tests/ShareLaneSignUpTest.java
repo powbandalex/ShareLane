@@ -1,11 +1,13 @@
 package tests;
 
+import models.RegistrationModel;
 import pages.fluentpage.AccountCreatedPage;
 import pages.fluentpage.RegistrationFluentPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import testdata.GetRegistrationModel;
 import utilities.GenerateFakeMessage;
 
 public class ShareLaneSignUpTest extends BaseTest {
@@ -38,14 +40,11 @@ public class ShareLaneSignUpTest extends BaseTest {
     @Test
     public void sendSignUpFormTest() {
         registrationFluentPage = new RegistrationFluentPage(driver);
+        RegistrationModel registration = GetRegistrationModel.getRegistrationWithAllFieldsBuilder();
         boolean isSuccessMessageShown = registrationFluentPage
                 .openRegistrationPage()
-                .inputZipCode(GenerateFakeMessage.getValidZipcode())
-                .sendRegistrationForm("some",
-                        "some",
-                        "some@test.com",
-                        "string@1",
-                        "string@1")
+                .inputZipCode(registration.getZipCode())
+                .sendRegistrationForm(registration)
                 .checkConfirmation();
         driver.quit();
         Assert.assertTrue(isSuccessMessageShown, "Success message isn't shown");

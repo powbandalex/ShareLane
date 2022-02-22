@@ -1,6 +1,5 @@
 package models;
 
-import jdk.nashorn.internal.objects.annotations.Setter;
 import lombok.*;
 
 @Data
