@@ -1,5 +1,6 @@
 package pages.pagefactorypages;
 
+import elements.TextInput;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import staticdata.WebUrls;
 public class RegistrationFactoryPage extends BasePage {
 
     @FindBy(name = "zip_code")
-    private WebElement zipInput;
+    private TextInput zipInput;
 
     @FindBy(css = "[value='Continue']")
     private WebElement continueButton;
@@ -41,7 +42,7 @@ public class RegistrationFactoryPage extends BasePage {
     }
 
     public void inputZipCode(String zipcode) {
-        zipInput.sendKeys(zipcode);
+        zipInput.clearAndWrite(zipcode);
         continueButton.click();
     }
 
