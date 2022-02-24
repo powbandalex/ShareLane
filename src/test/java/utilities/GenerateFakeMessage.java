@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 
 public class GenerateFakeMessage {
 
+
     public static String getValidZipcode() {
         Faker faker = new Faker();
         return faker.numerify("23###");
@@ -33,4 +34,15 @@ public class GenerateFakeMessage {
         Faker faker = new Faker();
         return faker.numerify("string@##");
     }
+
+    public static String getAccountName() {
+        Faker faker = new Faker();
+        return faker.beer().name();
+    }
+
+    public static String getPhone() {
+        Faker faker = new Faker();
+        return faker.phoneNumber().phoneNumber();
+    }
+
 }
