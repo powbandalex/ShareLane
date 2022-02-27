@@ -51,7 +51,6 @@ public class LocalPageTest extends BaseTest {
     public void alertDemoTest() {
         driver.get(WebUrls.LOCAL_PAGE_URL);
         driver.findElement(By.cssSelector("[onclick]")).click();
-
     }
 
     @Test

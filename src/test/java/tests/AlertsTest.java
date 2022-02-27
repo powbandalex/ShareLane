@@ -14,7 +14,7 @@ public class AlertsTest extends BaseTest {
 
     AlertsPage alertsPage;
 
-    @Test
+    @Test()
     public void checkJsAlertTest() throws IOException {
         alertsPage = new AlertsPage(driver);
         alertsPage.openAlertPage();

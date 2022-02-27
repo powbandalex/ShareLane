@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() throws MalformedURLException {
         DriverFactory factory = new DriverFactory();
-        driverManager = factory.getManager(DriverType.REMOTE);
+        driverManager = factory.getManager(DriverType.CHROME);
         driverManager.createDriver();
         driver = driverManager.getDriver();
         driverManager.maximize();
