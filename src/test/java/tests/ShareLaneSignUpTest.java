@@ -24,7 +24,7 @@ public class ShareLaneSignUpTest extends BaseTest {
         Assert.assertTrue(isRegisterButtonShown, "Error message isn't shown");
     }
 
-    @Test
+    @Test(groups = "excludeFailed")
     public void sendMoreThanFiveDigitsToZipCodeTest() {
         registrationFluentPage = new RegistrationFluentPage(driver);
         registrationFluentPage.openRegistrationPage();
@@ -37,7 +37,7 @@ public class ShareLaneSignUpTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(priority = 1, description = "Test checks sending of registration form")
     public void sendSignUpFormTest() {
         registrationFluentPage = new RegistrationFluentPage(driver);
         RegistrationModel registration = GetRegistrationModel.getRegistrationWithAllFieldsBuilder();

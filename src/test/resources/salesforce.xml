@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test">
+    <test name="test 1">
+        <groups>
+            <run>
+                <exclude name="excludeFailed"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.AlertsTest"></class>
+            <class name="tests.ShareLaneSignUpTest"></class>
+        </classes>
+    </test> <!-- Test -->
+</suite>
