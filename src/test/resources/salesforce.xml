@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Test">
+<suite name="Regression Test" thread-count="1" parallel="classes">
     <test name="test 1">
         <groups>
             <run>
@@ -9,7 +9,7 @@
         </groups>
         <classes>
             <class name="tests.AlertsTest"></class>
-            <class name="tests.ShareLaneSignUpTest"></class>
+            <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->
 </suite>

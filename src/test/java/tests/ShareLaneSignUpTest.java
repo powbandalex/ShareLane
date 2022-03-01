@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import testdata.GetRegistrationModel;
 import utilities.GenerateFakeMessage;
+import utilities.Retry;
 
 public class ShareLaneSignUpTest extends BaseTest {
 
@@ -24,8 +25,9 @@ public class ShareLaneSignUpTest extends BaseTest {
         Assert.assertTrue(isRegisterButtonShown, "Error message isn't shown");
     }
 
-    @Test(groups = "excludeFailed")
+    @Test(retryAnalyzer = Retry.class)
     public void sendMoreThanFiveDigitsToZipCodeTest() {
+        driverManager.removeTimeout();
         registrationFluentPage = new RegistrationFluentPage(driver);
         registrationFluentPage.openRegistrationPage();
         registrationFluentPage.inputZipCode(GenerateFakeMessage.getSixDigitsZipcode());
