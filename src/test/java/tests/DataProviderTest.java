@@ -1,8 +1,10 @@
 package tests;
 
+import lombok.extern.log4j.Log4j;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+@Log4j
 public class DataProviderTest {
 
     @DataProvider(name = "testData")
@@ -21,7 +23,7 @@ public class DataProviderTest {
 
     @Test(dataProvider = "testData")
     public void test123(double number, String expectedString) {
-        System.out.println(number + " " + expectedString);
+        log.info(number + " " + expectedString);
     }
 
 }

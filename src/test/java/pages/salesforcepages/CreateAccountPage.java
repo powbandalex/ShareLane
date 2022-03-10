@@ -1,5 +1,6 @@
 package pages.salesforcepages;
 
+import lombok.extern.log4j.Log4j2;
 import models.SalesForceAccountModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
