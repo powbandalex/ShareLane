@@ -8,21 +8,23 @@ import pages.salesforcepages.AccountsPage;
 import pages.salesforcepages.CreateAccountPage;
 import pages.salesforcepages.LoginPage;
 import testdata.GetNewAccountModel;
+import utilities.PropertiesManager;
 
 public class SalesForceAccountTest extends BaseTest {
 
-    private static String USERNAME = "salesforce-aahd@force.com";
-    private static String PASSWORD = "string@1";
     private static final Logger LOGGER = LogManager.getLogger(SalesForceAccountTest.class.getName());
 
     @Test
     public void createAccountTest() {
+        PropertiesManager propertiesManager = new PropertiesManager();
+        String username = System.getenv().getOrDefault("username", propertiesManager.get("USERNAME"));
+        String password = System.getenv().getOrDefault("password", propertiesManager.get("PASSWORD"));
         LOGGER.info("'Create account' test started");
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.info("Attempt to open " + loginPage.getClass().getName() + " page");
         loginPage.openPage();
-        LOGGER.info("Attempt to login with username: " + USERNAME + "and password: " + PASSWORD);
-        loginPage.makeLogin(USERNAME, PASSWORD);
+        LOGGER.info("Attempt to login with username: " + username + "and password: " + password);
+        loginPage.makeLogin(username, password);
         AccountsPage accountsPage = new AccountsPage(driver);
         LOGGER.info("Attempt to open " + accountsPage.getClass().getName() + " page");
         accountsPage.openAccountsTab();
