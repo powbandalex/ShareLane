@@ -1,6 +1,6 @@
 package testdata;
 
-import models.SalesForceAccountModel;
+import models.uimodels.SalesForceAccountModel;
 import utilities.GenerateFakeMessage;
 
 public class GetNewAccountModel {

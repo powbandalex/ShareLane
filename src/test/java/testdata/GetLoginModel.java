@@ -1,7 +1,6 @@
 package testdata;
 
-import models.LoginModel;
-import sun.rmi.runtime.Log;
+import models.uimodels.LoginModel;
 
 public class GetLoginModel {
 

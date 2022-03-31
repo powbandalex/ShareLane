@@ -1,8 +1,8 @@
 package steps;
 
 import io.qameta.allure.Step;
-import models.LoginModel;
-import models.RegistrationModel;
+import models.uimodels.LoginModel;
+import models.uimodels.RegistrationModel;
 import org.openqa.selenium.WebDriver;
 import pages.pompages.AccountCreatedPage;
 import pages.pompages.RegistrationPomWithStepsMethodsPage;

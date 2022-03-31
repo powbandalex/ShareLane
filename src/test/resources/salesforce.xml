@@ -8,7 +8,7 @@
             </run>
         </groups>
         <classes>
-            <class name="tests.AlertsTest"></class>
+            <class name="tests.uitests.AlertsTest"></class>
             <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->

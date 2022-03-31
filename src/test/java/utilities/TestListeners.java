@@ -1,18 +1,10 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import tests.BaseTest;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import tests.uitests.BaseTest;
 
 public class TestListeners implements ITestListener{
 

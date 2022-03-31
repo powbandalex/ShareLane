@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import org.testng.annotations.Test;
 import pages.pagefactorypages.InboxPage;

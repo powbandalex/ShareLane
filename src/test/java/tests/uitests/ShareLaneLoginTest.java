@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

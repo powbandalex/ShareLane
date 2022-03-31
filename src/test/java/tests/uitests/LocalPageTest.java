@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;

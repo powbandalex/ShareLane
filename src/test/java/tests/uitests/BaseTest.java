@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import driver.factorydriver.DriverFactory;
 import driver.factorydriver.DriverManager;

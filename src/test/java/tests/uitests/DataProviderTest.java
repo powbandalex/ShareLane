@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import lombok.extern.log4j.Log4j;
 import org.testng.annotations.DataProvider;

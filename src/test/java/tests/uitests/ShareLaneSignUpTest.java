@@ -1,6 +1,6 @@
-package tests;
+package tests.uitests;
 
-import models.RegistrationModel;
+import models.uimodels.RegistrationModel;
 import pages.fluentpage.AccountCreatedPage;
 import pages.fluentpage.RegistrationFluentPage;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package tests;
+package tests.uitests;
 
 import io.qameta.allure.*;
 import org.apache.log4j.LogManager;

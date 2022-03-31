@@ -1,6 +1,6 @@
 package pages.fluentpage;
 
-import models.RegistrationModel;
+import models.uimodels.RegistrationModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.WebUrls;

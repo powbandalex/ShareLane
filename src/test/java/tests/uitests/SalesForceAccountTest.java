@@ -1,6 +1,6 @@
-package tests;
+package tests.uitests;
 
-import models.SalesForceAccountModel;
+import models.uimodels.SalesForceAccountModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
