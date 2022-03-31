@@ -1,11 +1,13 @@
 package models;
 
 import lombok.*;
+import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
 @EqualsAndHashCode
 @ToString
+@Jacksonized
 public class RegistrationModel {
 
     private String zipCode;
